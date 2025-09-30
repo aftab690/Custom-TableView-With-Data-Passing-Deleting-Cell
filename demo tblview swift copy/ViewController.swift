@@ -43,6 +43,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            array1.remove(at: indexPath.row)
+            array2.remove(at: indexPath.row)
+            arrimg.remove(at: indexPath.row)
+            tblview.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 
 }
 
